@@ -13,5 +13,7 @@ namespace Domain.Models
         public bool IsAvailable { get; set; }
         public bool IsBanned { get; set; }
         public bool IsKicked { get; set; }
+        public User User { get; set; }
+        public Guild Guild { get; set; }
     }
 }

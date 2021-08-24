@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Domain.Models
 {
@@ -14,5 +15,6 @@ namespace Domain.Models
         public bool IsAvailable { get; set; }
         public string AfkChannelId { get; set; }
         public int MemberCount { get; set; }
+        public List<GuildMember> GuildMembers { get; set; }
     }
 }
