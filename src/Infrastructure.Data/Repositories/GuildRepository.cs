@@ -30,17 +30,17 @@ namespace Infrastructure.Data.Repositories
             }
         }
 
-        public async Task<bool> CreateGuildAsync(Guild guild)
+        public async Task<Guild> CreateGuildAsync(Guild guild)
         {
             try
             {
-                await _context.Guilds.AddAsync(guild);
+                var addedGuild = await _context.Guilds.AddAsync(guild);
                 await _context.SaveChangesAsync();
-                return true;
+                return addedGuild.Entity;
             }
             catch (Exception e)
             {
-                return false;
+                return null;
             }
         }
     }

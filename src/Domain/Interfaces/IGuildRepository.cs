@@ -7,6 +7,6 @@ namespace Domain.Interfaces
     public interface IGuildRepository
     {
         Task<IEnumerable<Guild>> GetGuildsAsync();
-        Task<bool> CreateGuildAsync(Guild guild);
+        Task<Guild> CreateGuildAsync(Guild guild);
     }
 }
