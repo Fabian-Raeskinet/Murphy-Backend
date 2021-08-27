@@ -5,9 +5,23 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Dto" />
+      <Folder Include="Application\GuildMember" />
+      <Folder Include="Application\Guild\Commands" />
+      <Folder Include="Application\User" />
       <Folder Include="Interfaces" />
-      <Folder Include="Services" />
+      <Folder Include="Services\Guild\Commands" />
+      <Folder Include="Services\Guild\Queries" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+      <PackageReference Include="MediatR" Version="9.0.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Infrastructure.Data\Infrastructure.Data.csproj" />
     </ItemGroup>
 
 </Project>

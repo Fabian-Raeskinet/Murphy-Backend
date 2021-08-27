@@ -1,4 +1,6 @@
-﻿using Infrastructure.Data.Persistence;
+﻿using Domain.Interfaces;
+using Infrastructure.Data.Persistence;
+using Infrastructure.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,7 +13,6 @@ namespace Infrastructure.IoC
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             #region Basic Config
-            services.AddControllersWithViews();
             
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(config => { config.RootPath = "ClientApp/build"; });
@@ -32,6 +33,13 @@ namespace Infrastructure.IoC
                         {Title = "Murphy API v1", Version = "v1", Description = "Different APIs of Murphy"});
             });
             #endregion
+
+            #region Repositories
+
+            services.AddScoped(typeof(IGuildRepository), typeof(GuildRepository));
+
+            #endregion
+            
             return services;
         }
     }
