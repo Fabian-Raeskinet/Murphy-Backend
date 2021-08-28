@@ -5,7 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Application\GuildMember" />
       <Folder Include="Interfaces" />
     </ItemGroup>
 
