@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Application.Application.Guild.Commands;
-using Application.Application.Guild.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Controllers.Guilds

@@ -12,6 +12,8 @@ namespace WebUI
     public class Startup
     {
         private readonly IConfiguration _configuration;
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 
         public Startup(IConfiguration configuration)
         {
@@ -22,6 +24,14 @@ namespace WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
             services.AddControllersWithViews();
 
             services.AddApplication().AddInfrastructure(_configuration);

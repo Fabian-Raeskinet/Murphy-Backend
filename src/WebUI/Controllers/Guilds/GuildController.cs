@@ -7,7 +7,6 @@ namespace WebUI.Controllers.Guilds
 {
     [ApiController]
     [Route("api/")]
-    [ProducesResponseType(typeof(Guild), (int)HttpStatusCode.OK)]
     public partial class GuildController : ControllerBase
     {
         private readonly IMediator _mediator;

@@ -37,6 +37,7 @@ namespace Infrastructure.IoC
             #region Repositories
 
             services.AddScoped(typeof(IGuildRepository), typeof(GuildRepository));
+            services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
 
             #endregion
             
