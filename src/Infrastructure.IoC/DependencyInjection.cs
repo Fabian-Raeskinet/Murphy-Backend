@@ -1,6 +1,9 @@
 ﻿using Domain.Interfaces;
 using Infrastructure.Data.Persistence;
 using Infrastructure.Data.Repositories;
+using Infrastructure.Data.Repositories.Guild;
+using Infrastructure.Data.Repositories.GuildMember;
+using Infrastructure.Data.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

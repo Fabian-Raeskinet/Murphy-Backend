@@ -35,7 +35,7 @@ namespace Application.Application.GuildMember.Commands
         public async Task<Domain.Models.GuildMember> Handle(CreateGuildMemberCommand request, CancellationToken cancellationToken)
         {
             var guildMember = _mapper.Map<Domain.Models.GuildMember>(request);
-            return await _repository.CreateUserAsync(guildMember);
+            return await _repository.CreateGuildMemberAsync(guildMember);
         }
     }
 }
