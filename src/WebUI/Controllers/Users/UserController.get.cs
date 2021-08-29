@@ -8,7 +8,7 @@ namespace WebUI.Controllers.Users
     {
         [HttpGet]
         [Route("users")]
-        public async Task<ActionResult> GetGuilds()
+        public async Task<ActionResult> GetUsers()
         {
             var query = new GetAllUsersQuery();
             var result = await _mediator.Send(query);

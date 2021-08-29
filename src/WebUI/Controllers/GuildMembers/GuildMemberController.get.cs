@@ -8,7 +8,7 @@ namespace WebUI.Controllers.GuildMembers
     {
         [HttpGet]
         [Route("guild-members")]
-        public async Task<ActionResult> GetGuilds()
+        public async Task<ActionResult> GetGuildMembers()
         {
             var query = new GetAllGuildMembersQuery();
             var result = await _mediator.Send(query);

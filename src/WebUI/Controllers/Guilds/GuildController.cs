@@ -10,12 +10,9 @@ namespace WebUI.Controllers.Guilds
     public partial class GuildController : ControllerBase
     {
         private readonly IMediator _mediator;
-
         public GuildController(IMediator mediator)
         {
             _mediator = mediator;
         }
-
-       
     }
 }

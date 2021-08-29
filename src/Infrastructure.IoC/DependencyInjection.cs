@@ -1,8 +1,10 @@
 ﻿using Domain.Interfaces;
 using Infrastructure.Data.Persistence;
 using Infrastructure.Data.Repositories;
+using Infrastructure.Data.Repositories.CategoryChannel;
 using Infrastructure.Data.Repositories.Guild;
 using Infrastructure.Data.Repositories.GuildMember;
+using Infrastructure.Data.Repositories.Role;
 using Infrastructure.Data.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -42,6 +44,8 @@ namespace Infrastructure.IoC
             services.AddScoped(typeof(IGuildRepository), typeof(GuildRepository));
             services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
             services.AddScoped(typeof(IGuildMemberRepository), typeof(GuildMemberRepository));
+            services.AddScoped(typeof(IRoleRepository), typeof(RoleRepository));
+            services.AddScoped(typeof(ICategoryChannelRepository), typeof(CategoryChannelRepository));
 
             #endregion
             

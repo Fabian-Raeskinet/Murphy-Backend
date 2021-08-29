@@ -8,7 +8,7 @@ namespace WebUI.Controllers.Users
     {
         [HttpPost]
         [Route("users")]
-        public async Task<ActionResult> CreateGuild([FromBody] CreateUserCommand user)
+        public async Task<ActionResult> CreateUser([FromBody] CreateUserCommand user)
         {
             var result = await _mediator.Send(user);
             return Ok(result);

@@ -4,44 +4,22 @@ using Infrastructure.Data.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Data.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210829103437_Role")]
+    partial class Role
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Domain.Models.CategoryChannel", b =>
-                {
-                    b.Property<string>("CategoryChannelId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("GuildId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Position")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoryChannelId");
-
-                    b.HasIndex("GuildId");
-
-                    b.ToTable("CategoryChannels");
-                });
 
             modelBuilder.Entity("Domain.Models.Guild", b =>
                 {
@@ -129,9 +107,6 @@ namespace Infrastructure.Data.Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("GuildId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("MemberRoleCount")
                         .HasColumnType("int");
 
@@ -142,8 +117,6 @@ namespace Infrastructure.Data.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("RoleId");
-
-                    b.HasIndex("GuildId");
 
                     b.ToTable("Roles");
                 });
@@ -173,15 +146,6 @@ namespace Infrastructure.Data.Persistence.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Domain.Models.CategoryChannel", b =>
-                {
-                    b.HasOne("Domain.Models.Guild", "Guild")
-                        .WithMany()
-                        .HasForeignKey("GuildId");
-
-                    b.Navigation("Guild");
-                });
-
             modelBuilder.Entity("Domain.Models.GuildMember", b =>
                 {
                     b.HasOne("Domain.Models.Guild", "Guild")
@@ -195,15 +159,6 @@ namespace Infrastructure.Data.Persistence.Migrations
                     b.Navigation("Guild");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Domain.Models.Role", b =>
-                {
-                    b.HasOne("Domain.Models.Guild", "Guild")
-                        .WithMany()
-                        .HasForeignKey("GuildId");
-
-                    b.Navigation("Guild");
                 });
 
             modelBuilder.Entity("Domain.Models.Guild", b =>
