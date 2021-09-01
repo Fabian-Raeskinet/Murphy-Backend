@@ -2,11 +2,13 @@
 using Application.Application.Guild.Commands;
 using Application.Application.GuildMember.Commands;
 using Application.Application.Role.Commands;
+using Application.Application.TextChannel.Commands;
 using Application.Application.User.Commands;
 using Application.Dtos.CategoryChannel.Get;
 using Application.Dtos.Guild.Get;
 using Application.Dtos.GuildMember.Get;
 using Application.Dtos.Role.Get;
+using Application.Dtos.TextChannel.Get;
 using Application.Dtos.User.Get;
 using AutoMapper;
 using Domain.Models;
@@ -31,6 +33,9 @@ namespace Application
 
             CreateMap<CategoryChannel, GetCategoryChannelDto>();
             CreateMap<CreateCategoryChannelCommand, CategoryChannel>();
+
+            CreateMap<TextChannel, GetTextChannelDto>();
+            CreateMap<CreateTextChannelCommand, TextChannel>();
         }
     }
 }

@@ -5,6 +5,8 @@ using Infrastructure.Data.Repositories.CategoryChannel;
 using Infrastructure.Data.Repositories.Guild;
 using Infrastructure.Data.Repositories.GuildMember;
 using Infrastructure.Data.Repositories.Role;
+using Infrastructure.Data.Repositories.Seed;
+using Infrastructure.Data.Repositories.TextChannel;
 using Infrastructure.Data.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +48,8 @@ namespace Infrastructure.IoC
             services.AddScoped(typeof(IGuildMemberRepository), typeof(GuildMemberRepository));
             services.AddScoped(typeof(IRoleRepository), typeof(RoleRepository));
             services.AddScoped(typeof(ICategoryChannelRepository), typeof(CategoryChannelRepository));
+            services.AddScoped<ITextChannelRepository, TextChannelRepository>();
+            services.AddScoped<ISeedRepository, SeedReposioty>();
 
             #endregion
             

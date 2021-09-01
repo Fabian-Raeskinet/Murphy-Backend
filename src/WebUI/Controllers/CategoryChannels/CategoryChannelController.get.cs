@@ -2,7 +2,7 @@
 using Application.Application.CategoryChannel.Queries;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebUI.Controllers.CategoryChannel
+namespace WebUI.Controllers.CategoryChannels
 {
     public partial class CategoryChannelController
     {
